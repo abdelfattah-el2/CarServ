@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
+:root {
+  --primary: #D81324;
+  --secondary: #0B2154;
+  --light: #F2F2F2;
+  --dark: #111111;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -14,4 +19,7 @@ body {
     rgb(var(--background-start-rgb));
     font-family: "Ubuntu", sans-serif !important;
     font-family: "Barlow", sans-serif !important;
+}
+.active {
+     color: var(--primary);
 }
