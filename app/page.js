@@ -1,7 +1,13 @@
+import Carousels from "./Components/Carousel";
+
+
 
 
 export default function Home() {
+  
   return (
-  <div></div>
-  )
+    <div className="">
+            <Carousels />
+    </div>
+  );
 }
