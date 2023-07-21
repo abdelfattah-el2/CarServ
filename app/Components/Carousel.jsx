@@ -41,7 +41,7 @@ const Carousel = ({ images }) => {
         </button>
 
         <Image
-          alt=""
+           alt="Picture of the author"
           src={images[activeIndex]}
           className=" duration-1000  delay-100"
         />
