@@ -92,7 +92,7 @@ export default function NavBar() {
               <div
                 className={
                   hidden
-                    ? "  absolute  top-[100%]  duration-700 left-[-50%] border bg-white"
+                    ? "  absolute  top-[100%]  z-[200000] duration-700 left-[-50%] border bg-white"
                     : "  absolute hidden opacity-0  top-[150%]  duration-700 left-[-50%] border bg-white"
                 }
               >
@@ -144,7 +144,7 @@ export default function NavBar() {
         </div>
       </div>
       {/* bottom navbar */}
-      <div className="p-3 fixed w-full bottom-0  bg-light shadow sm:hidden">
+      <div className="p-3 fixed w-full z-50 bottom-0  bg-light shadow sm:hidden">
         <div>
           <ul className=" flex items-end  justify-evenly">
             <li className="mr-1">
