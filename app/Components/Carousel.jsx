@@ -97,7 +97,7 @@ const Carousel = ({ images }) => {
               </>
             ) : (
               <>
-                {" "}
+                {" "} <div className="   flex justify-between  items-center">
                 <motion.div
                   className=" text-center lg:text-start p-2"
                   initial={{ opacity: 0, y: -80 }}
@@ -138,6 +138,7 @@ const Carousel = ({ images }) => {
                   {" "}
                   <Image className=" max-w-full h-auto" src={corsl_2} />
                 </motion.div>
+            </div>
               </>
             )}
           </div>
