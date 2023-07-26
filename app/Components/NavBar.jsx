@@ -32,10 +32,11 @@ export default function NavBar() {
     window.addEventListener("click", close);
   }, []);
   const currentRoute = usePathname();
+
   return (
     <>
-      <div className=" flex justify-between items-center shadow   bg-white ">
-        <div className="p-3">
+      <div className=" sticky top-0 z-[55577755] flex justify-between items-center shadow   bg-white ">
+        <div className="p-3 py-5 sm:py-4">
           <Link href={"/"}>
             <h1 className=" text-primary flex text-3xl items-center font-bold">
               <span className=" mr-2  ">
@@ -58,7 +59,7 @@ export default function NavBar() {
             <li className="hover:text-primary uppercase mr-3  flex items-center">
               <Link
                 href={"/about"}
-                className={currentRoute === "/about " ? "active py-5" : "py-5"}
+                className={currentRoute === "/about" ? "active py-5" : "py-5"}
               >
                 About
               </Link>
@@ -99,7 +100,7 @@ export default function NavBar() {
                 <ul>
                   <li>
                     <Link
-                      href={""}
+                      href={"/booking"}
                       className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
                     >
                       Booking
@@ -107,7 +108,7 @@ export default function NavBar() {
                   </li>
                   <li>
                     <Link
-                      href={""}
+                      href={"/technicians"}
                       className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
                     >
                       Technicians
@@ -115,7 +116,7 @@ export default function NavBar() {
                   </li>
                   <li>
                     <Link
-                      href={""}
+                      href={"/testimonial"}
                       className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
                     >
                       Testimonial
@@ -144,7 +145,7 @@ export default function NavBar() {
         </div>
       </div>
       {/* bottom navbar */}
-      <div className="p-3 fixed w-full z-50 bottom-0  bg-light shadow sm:hidden">
+      <div className="p-3 pt-0 fixed w-full z-50 bottom-0  bg-white shadow sm:hidden">
         <div>
           <ul className=" flex items-end  justify-evenly">
             <li className="mr-1">
