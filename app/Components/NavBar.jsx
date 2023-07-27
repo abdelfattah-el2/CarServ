@@ -185,7 +185,7 @@ export default function NavBar() {
               >
                 Home
                 <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
+                  <IconButton className={currentRoute === "/" ? " text-primary " : ""}>
                     <HomeIcon fontSize={"small"} />
                   </IconButton>
                 </span>
@@ -199,7 +199,7 @@ export default function NavBar() {
                 About
                 <span>
                   <IconButton
-                    className={currentRoute === "/about" ? "active " : ""}
+                    className={currentRoute === "/about" ? "text-primary " : ""}
                   >
                     <GroupsIcon fontSize={"small"} />
                   </IconButton>
@@ -214,7 +214,7 @@ export default function NavBar() {
                 Service
                 <span>
                   <IconButton
-                    className={currentRoute === "/service" ? "active " : ""}
+                    className={currentRoute === "/service" ? "text-primary " : ""}
                   >
                     <ConstructionRoundedIcon fontSize={"small"} />
                   </IconButton>
@@ -309,7 +309,7 @@ export default function NavBar() {
                 Contact
                 <span>
                   <IconButton
-                    className={currentRoute === "/contact" ? "active " : ""}
+                    className={currentRoute === "/contact" ? "text-primary " : ""}
                   >
                     <EmailIcon fontSize={"small"} />
                   </IconButton>
@@ -319,7 +319,7 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-      
+
       {/* End ButtonBar */}
     </>
   );
