@@ -1,5 +1,5 @@
 "use client";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import {  motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import EngineeringIcon from "@mui/icons-material/Engineering";

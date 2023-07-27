@@ -35,6 +35,7 @@ export default function NavBar() {
 
   return (
     <>
+    {/* Start TopBar */}
       <div className=" sticky top-0 z-[55577755] flex justify-between items-center shadow   bg-white ">
         <div className="p-3 py-5 sm:py-4">
           <Link href={"/"}>
@@ -76,20 +77,27 @@ export default function NavBar() {
               ref={navTopRef}
               className="uppercase mr-3 relative  flex items-center "
             >
-              <Link
-                href={""}
+              <div
                 onClick={() => {
                   setHidden(hidden === false ? true : false);
                 }}
                 className={
-                  hidden ? "text-primary py-5 " : "hover:text-primary py-5 "
+                  currentRoute === "/pages/booking" ||
+                  hidden ||
+                  currentRoute === "/pages/technicians" ||
+                  currentRoute === "/pages/testimonial"
+                    ? "  text-primary py-5 inline-block      cursor-pointer"
+                    : "hover:text-primary py-5 inline-block  cursor-pointer"
                 }
+                // className={
+                //   hidden ? "text-primary py-5 " : "hover:text-primary py-5 "
+                // }
               >
                 Pages
                 <span>
                   <KeyboardArrowDownIcon />
                 </span>
-              </Link>
+              </div>
               <div
                 className={
                   hidden
@@ -100,24 +108,45 @@ export default function NavBar() {
                 <ul>
                   <li>
                     <Link
-                      href={"/booking"}
-                      className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      href={"/pages/booking"}
+                      className={
+                        currentRoute === "/pages/booking"
+                          ? "  bg-primary text-white p-3 px-4 block mt-1  "
+                          : "p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      }
+                      onClick={() => {
+                        setHidden(hidden === false ? true : false);
+                      }}
                     >
                       Booking
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href={"/technicians"}
-                      className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      href={"/pages/technicians"}
+                      className={
+                        currentRoute === "/pages/technicians"
+                          ? "  bg-primary text-white p-3 px-4 block mt-1  "
+                          : "p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      }
+                      onClick={() => {
+                        setHidden(hidden === false ? true : false);
+                      }}
                     >
                       Technicians
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href={"/testimonial"}
-                      className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      href={"/pages/testimonial"}
+                      className={
+                        currentRoute === "/pages/testimonial"
+                          ? "  bg-primary text-white p-3 px-4 block mt-1  "
+                          : "p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      }
+                      onClick={() => {
+                        setHidden(hidden === false ? true : false);
+                      }}
                     >
                       Testimonial
                     </Link>
@@ -144,14 +173,15 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
-      {/* bottom navbar */}
+        {/* End TopBar */}
+      {/* Start BottomBar */}
       <div className="p-3 pt-0 fixed w-full z-50 bottom-0  bg-white shadow sm:hidden">
         <div>
           <ul className=" flex items-end  justify-evenly">
             <li className="mr-1">
               <Link
                 className=" p-1 text-sm flex flex-col-reverse  items-center"
-                href={""}
+                href={"/"}
               >
                 Home
                 <span>
@@ -164,11 +194,13 @@ export default function NavBar() {
             <li className="mr-1">
               <Link
                 className=" p-1 text-sm flex flex-col-reverse items-center"
-                href={""}
+                href={"/about"}
               >
                 About
                 <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
+                  <IconButton
+                    className={currentRoute === "/about" ? "active " : ""}
+                  >
                     <GroupsIcon fontSize={"small"} />
                   </IconButton>
                 </span>
@@ -177,64 +209,91 @@ export default function NavBar() {
             <li className="mr-1">
               <Link
                 className=" p-1 text-sm flex flex-col-reverse items-center"
-                href={""}
+                href={"/service"}
               >
                 Service
                 <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
+                  <IconButton
+                    className={currentRoute === "/service" ? "active " : ""}
+                  >
                     <ConstructionRoundedIcon fontSize={"small"} />
                   </IconButton>
                 </span>
               </Link>
             </li>
-            <li className="mr-1">
-              <Link
-                className=" p-1  text-sm flex flex-col-reverse items-center"
-                href={""}
-              >
-                Get A Quote
-                <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
-                    <AddCircleOutlineSharpIcon fontSize={"medium"} />
-                  </IconButton>
-                </span>
-              </Link>
-            </li>
+
             <li className="mr-1 relative" ref={navbotRef}>
-              <Link
-                className=" p-1 text-sm flex flex-col-reverse items-center"
-                href={""}
+              <div
+                className=" cursor-pointer p-1 text-sm  flex flex-col-reverse items-center"
                 onClick={() => {
                   setHidden(hidden === false ? true : false);
                 }}
               >
                 Page
                 <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
+                  <IconButton
+                    className={
+                      currentRoute === "/pages/booking" ||
+                      currentRoute === "/pages/technicians" ||
+                      hidden ||
+                      currentRoute === "/pages/testimonial"
+                        ? "  text-primary  "
+                        : " "
+                    }
+                  >
                     <MoreVertOutlinedIcon fontSize={"small"} />
                   </IconButton>
                 </span>
-              </Link>
+              </div>
               <div
                 className={
                   hidden
-                    ? " absolute  top-[-190%]  duration-1000 left-[-50%] border bg-white"
-                    : " absolute   top-[190%] hidden opacity-0  duration-1000  left-[-50%] border bg-white"
+                    ? " absolute  top-[-246%]  duration-1000 left-[-50%] border bg-white"
+                    : " absolute   top-[200%] hidden opacity-0  duration-1000  left-[-50%] border bg-white"
                 }
               >
                 <ul>
                   <li>
                     <Link
-                      className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
-                      href={""}
+                      className={
+                        currentRoute === "/pages/booking"
+                          ? "  bg-primary text-white p-3 px-4 block mt-1  "
+                          : "p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      }
+                      href={"/pages/booking"}
+                      onClick={() => {
+                        setHidden(hidden === false ? true : false);
+                      }}
+                    >
+                      Booking
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className={
+                        currentRoute === "/pages/technicians"
+                          ? "  bg-primary text-white p-3 px-4 block mt-1  "
+                          : "p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      }
+                      href={"/pages/technicians"}
+                      onClick={() => {
+                        setHidden(hidden === false ? true : false);
+                      }}
                     >
                       Technicians
                     </Link>
                   </li>
                   <li>
                     <Link
-                      className="p-3 px-4 block mt-1 hover:bg-slate-300/30 "
-                      href={""}
+                      className={
+                        currentRoute === "/pages/testimonial"
+                          ? "  bg-primary text-white p-3 px-4 block mt-1  "
+                          : "p-3 px-4 block mt-1 hover:bg-slate-300/30 "
+                      }
+                      href={"/pages/testimonial"}
+                      onClick={() => {
+                        setHidden(hidden === false ? true : false);
+                      }}
                     >
                       Testimonial
                     </Link>
@@ -245,24 +304,13 @@ export default function NavBar() {
             <li className="mr-1">
               <Link
                 className=" p-1 text-sm flex flex-col-reverse items-center"
-                href={""}
-              >
-                Booking
-                <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
-                    <BookIcon fontSize={"small"} />
-                  </IconButton>
-                </span>
-              </Link>
-            </li>
-            <li className="mr-1">
-              <Link
-                className=" p-1 text-sm flex flex-col-reverse items-center"
-                href={""}
+                href={"/contact"}
               >
                 Contact
                 <span>
-                  <IconButton className={currentRoute === "/" ? "active " : ""}>
+                  <IconButton
+                    className={currentRoute === "/contact" ? "active " : ""}
+                  >
                     <EmailIcon fontSize={"small"} />
                   </IconButton>
                 </span>
@@ -271,6 +319,7 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
+      {/* End ButtonBar */}
     </>
   );
 }
