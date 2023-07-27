@@ -319,6 +319,7 @@ export default function NavBar() {
           </ul>
         </div>
       </div>
+      
       {/* End ButtonBar */}
     </>
   );
